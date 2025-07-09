@@ -1,0 +1,11 @@
+# Ignore these folders
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+Obj/
+Logs/
+MemoryCaptures/
+
+# Do NOT ignore Assets and ProjectSettings
+# (we want to include them in Git)
