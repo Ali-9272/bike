@@ -25,12 +25,12 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = false;
     public bool isGamePaused = false;
     
-    private MotorcycleController motorcycleController;
+    private SimpleMotorcycle motorcycleController;
     
     private void Start()
     {
         LoadHighScore();
-        motorcycleController = FindObjectOfType<MotorcycleController>();
+        motorcycleController = FindObjectOfType<SimpleMotorcycle>();
         ShowMainMenu();
     }
     

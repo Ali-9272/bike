@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
         // If no target is assigned, try to find the motorcycle
         if (target == null)
         {
-            MotorcycleController motorcycle = FindObjectOfType<MotorcycleController>();
+            SimpleMotorcycle motorcycle = FindObjectOfType<SimpleMotorcycle>();
             if (motorcycle != null)
                 target = motorcycle.transform;
         }

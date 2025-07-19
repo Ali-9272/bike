@@ -31,7 +31,7 @@ public class EnvironmentController : MonoBehaviour
     private void Start()
     {
         // Find the player (motorcycle)
-        MotorcycleController motorcycle = FindObjectOfType<MotorcycleController>();
+        SimpleMotorcycle motorcycle = FindObjectOfType<SimpleMotorcycle>();
         if (motorcycle != null)
             playerTransform = motorcycle.transform;
         

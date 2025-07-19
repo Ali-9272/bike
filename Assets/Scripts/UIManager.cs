@@ -41,12 +41,12 @@ public class UIManager : MonoBehaviour
     public GameObject speedLines;
     
     private GameManager gameManager;
-    private MotorcycleController motorcycleController;
+    private SimpleMotorcycle motorcycleController;
     
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        motorcycleController = FindObjectOfType<MotorcycleController>();
+        motorcycleController = FindObjectOfType<SimpleMotorcycle>();
         
         SetupMainMenu();
         SetupButtonListeners();
@@ -182,7 +182,7 @@ public class UIManager : MonoBehaviour
             float wheelieScore = motorcycleController.GetWheelieScore();
             
             if (wheelieText != null)
-                wheelieText.text = motorcycleController.isWheelieActive ? "WHEELIE!" : "";
+                wheelieText.text = motorcycleController.IsWheelieActive() ? "WHEELIE!" : "";
                 
             if (wheelieBarSlider != null)
                 wheelieBarSlider.value = wheelieScore;
@@ -190,16 +190,16 @@ public class UIManager : MonoBehaviour
             // Visual effects for wheelie
             if (wheelieParticles != null)
             {
-                if (motorcycleController.isWheelieActive && !wheelieParticles.isPlaying)
+                if (motorcycleController.IsWheelieActive() && !wheelieParticles.isPlaying)
                     wheelieParticles.Play();
-                else if (!motorcycleController.isWheelieActive && wheelieParticles.isPlaying)
+                else if (!motorcycleController.IsWheelieActive() && wheelieParticles.isPlaying)
                     wheelieParticles.Stop();
             }
             
             // Speed lines effect
             if (speedLines != null)
             {
-                speedLines.SetActive(motorcycleController.currentSpeed > 10f);
+                speedLines.SetActive(gameManager.gameSpeed > 10f);
             }
         }
     }
